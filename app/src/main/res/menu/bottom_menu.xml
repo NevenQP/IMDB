@@ -12,11 +12,6 @@
         android:title="@string/search" />
 
     <item
-        android:id="@+id/video"
-        android:icon="@drawable/video_button_24"
-        android:title="@string/video" />
-
-    <item
         android:id="@+id/you"
         android:icon="@drawable/you_button_24"
         android:title="@string/you" />

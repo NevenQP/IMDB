@@ -1,26 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Search">
+    android:background="@color/my_primary"
+    android:orientation="vertical"
+    android:visibility="visible">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/featured_today" />
+            android:background="@color/second_primary"
+            android:orientation="vertical">
 
-        <fragment
-            android:name="vn.edu.usth.imdbclient.FeaturedToday"
-            android:id="@+id/fragment_post"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Popular trailers"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"></TextView>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/second_primary"
+                android:text="SEE ALL"
+                android:textColor="@color/blue"
+                android:textSize="12dp">
+            </androidx.appcompat.widget.AppCompatButton>
 
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="0dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/box"
+                            android:gravity="bottom"
+                            android:text="  One Piece"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/box"
+                            android:gravity="bottom"
+                            android:text="  One Piece"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/box"
+                            android:gravity="bottom"
+                            android:text="  One Piece"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/second_primary"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Popular trailers"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"></TextView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/second_primary"
+                android:fontFamily="sans-serif"
+                android:text="SEE ALL"
+                android:textColor="@color/blue"
+                android:textSize="12dp"></androidx.appcompat.widget.AppCompatButton>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="0dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/box"
+                            android:gravity="bottom"
+                            android:text="  One Piece"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/box"
+                            android:gravity="bottom"
+                            android:text="  One Piece"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/box"
+                            android:gravity="bottom"
+                            android:text="  One Piece"
+                            android:textColor="@color/white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </RelativeLayout>
     </LinearLayout>
-
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

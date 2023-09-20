@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
             selectedFragment = new Home();
         } else if (itemId == R.id.search) {
             selectedFragment = new Blue();
-        } else if (itemId == R.id.video) {
-            selectedFragment = new Video();
         } else if (itemId == R.id.you){
             selectedFragment = new Blue();
         }
