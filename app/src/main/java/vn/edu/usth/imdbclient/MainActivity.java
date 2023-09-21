@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         if (itemId == R.id.home) {
             selectedFragment = new Home();
         } else if (itemId == R.id.search) {
-            selectedFragment = new Blue();
+            selectedFragment = new Search();
         } else if (itemId == R.id.you){
             selectedFragment = new You();
         }
@@ -47,4 +50,16 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     };
+
+    public void OpenMovie(View view){
+        ImageButton button = (ImageButton) view;
+        Fragment fragment = new Movie(); // Replace with your fragment class
+
+        // Use a FragmentManager to replace the current fragment with the new one
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment) // Replace "fragment_container" with the ID of the container where the fragment will be displayed
+                .addToBackStack(null) // Optional: Adds the transaction to the back stack
+                .commit();
+    }
 }

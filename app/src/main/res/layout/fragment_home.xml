@@ -3,33 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/my_primary"
     android:visibility="visible">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-                android:text="Featured Today"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"></TextView>
+                android:text="@string/featured_today"
+                android:textColor="@color/yellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="110dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="0dp"
                 android:scrollbars="none">
@@ -37,74 +38,73 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginStart="10dp">
 
                     <fragment
-                        android:name="vn.edu.usth.imdbclient.Featured"
-                        android:id="@+id/feature"
+                        android:name="vn.edu.usth.imdbclient.Vid_1"
+                        android:id="@+id/listVideo8"
                         android:layout_width="200dp"
                         android:layout_height="100dp"
-                        android:layout_margin="5dp"
-                        tools:layout="@layout/fragment_featured" />
+                        android:layout_marginEnd="10dp"
+                        tools:layout="@layout/fragment_vid_1" />
 
                     <fragment
-                        android:name="vn.edu.usth.imdbclient.Featured"
-                        android:id="@+id/feature2"
+                        android:name="vn.edu.usth.imdbclient.Vid_1"
+                        android:id="@+id/listVideo7"
                         android:layout_width="200dp"
                         android:layout_height="100dp"
-                        android:layout_margin="5dp"
-                        android:layout_marginLeft="5dp"
-                        tools:layout="@layout/fragment_featured" />
+                        android:layout_marginEnd="10dp"
+                        tools:layout="@layout/fragment_vid_1" />
                 </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-                android:text="What to watch"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"></TextView>
+                android:text="@string/what_to_watch"
+                android:textColor="@color/yellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@color/my_primary"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-5dp"
-                    android:src="@drawable/vertical_minus_icon_211413"></ImageView>
+                    android:layout_marginStart="-5dp"
+                    android:src="@drawable/vertical_minus_icon_211413" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:fontFamily="sans-serif"
-                    android:text="Popular trailers"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
+                    android:text="@string/popular_trailers"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="50dp"
                     android:layout_height="25dp"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
                     android:background="?android:attr/selectableItemBackground"
-                    android:text="SEE ALL"
+                    android:text="@string/see_all"
                     android:textColor="@color/blue"
-                    android:textSize="12dp"></androidx.appcompat.widget.AppCompatButton>
+                    android:textSize="12sp" />
 
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
-                    android:layout_height="110dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="0dp"
@@ -113,14 +113,14 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginStart="10dp">
 
                         <fragment
                             android:name="vn.edu.usth.imdbclient.Vid_1"
                             android:id="@+id/listVideo5"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
                             tools:layout="@layout/fragment_vid_1" />
 
 
@@ -129,7 +129,7 @@
                             android:id="@+id/listVideo6"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
                             tools:layout="@layout/fragment_vid_1" />
                     </LinearLayout>
                 </HorizontalScrollView>
@@ -138,39 +138,39 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@color/my_primary"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-5dp"
-                    android:src="@drawable/vertical_minus_icon_211413"></ImageView>
+                    android:layout_marginStart="-5dp"
+                    android:src="@drawable/vertical_minus_icon_211413" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:fontFamily="sans-serif"
-                    android:text="Recent trailers"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
+                    android:text="@string/recent_trailers"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="50dp"
                     android:layout_height="25dp"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="5dp"
                     android:background="?android:attr/selectableItemBackground"
-                    android:text="SEE ALL"
+                    android:text="@string/see_all"
                     android:textColor="@color/blue"
-                    android:textSize="12dp"></androidx.appcompat.widget.AppCompatButton>
+                    android:textSize="12sp" />
 
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
-                    android:layout_height="110dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="0dp"
@@ -179,14 +179,14 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginStart="10dp">
 
                         <fragment
                             android:name="vn.edu.usth.imdbclient.Vid_1"
                             android:id="@+id/listVideo1"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
                             tools:layout="@layout/fragment_vid_1" />
 
 
@@ -195,7 +195,7 @@
                             android:id="@+id/listVideo2"
                             android:layout_width="200dp"
                             android:layout_height="100dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginEnd="10dp"
                             tools:layout="@layout/fragment_vid_1" />
                     </LinearLayout>
                 </HorizontalScrollView>
@@ -204,13 +204,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif"
-                android:text="Explore movies and TV shows"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:textStyle="bold"></TextView>
+                android:text="@string/explore_movies_and_tv_shows"
+                android:textColor="@color/yellow"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,7 +221,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@color/white"
+                    android:background="@color/my_primary"
                     android:orientation="vertical">
 
                     <ImageView
@@ -233,236 +233,240 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="sans-serif"
-                        android:text="Top box office"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/top_box_office"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="28dp"
-                        android:text="Weekend of Ngày 15 - Ngày 17 tháng 9"
+                        android:text="@string/weekend_of_ng_y_15_ng_y_17_th_ng_9"
                         android:textColor="@color/dark_grey"
-                        android:textSize="12dp"></TextView>
+                        android:textSize="12sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="50dp"
                         android:layout_height="25dp"
                         android:layout_alignParentTop="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginTop="5dp"
                         android:background="?android:attr/selectableItemBackground"
-                        android:text="SEE ALL"
+                        android:text="@string/see_all"
                         android:textColor="@color/blue"
-                        android:textSize="12dp"></androidx.appcompat.widget.AppCompatButton>
+                        android:textSize="12sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:text="1"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/_1"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <ImageView
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Fav"
+                        android:id="@+id/fav1"
                         android:layout_width="30dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/bookmark"></ImageView>
+                        android:layout_marginStart="20dp"
+                        tools:layout="@layout/fav" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="top"
-                        android:text="Ác Quỷ Ma Sơ II"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/c_qu_ma_s_ii"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="bottom"
-                        android:text="$14,5M"
+                        android:text="@string/_14_5m"
                         android:textColor="@color/dark_grey"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
-                        android:src="@drawable/ticket_icon_icons_com_73367"></ImageView>
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ticket_icon_icons_com_73367" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:text="2"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/_2"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <ImageView
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Fav"
+                        android:id="@+id/fav2"
                         android:layout_width="30dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/bookmark"></ImageView>
+                        android:layout_marginStart="20dp"
+                        tools:layout="@layout/fav" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="top"
-                        android:text="Án mạng ở Venice"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/n_m_ng_venice"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="bottom"
-                        android:text="$14,3M"
+                        android:text="@string/_14_3m"
                         android:textColor="@color/dark_grey"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
-                        android:src="@drawable/ticket_icon_icons_com_73367"></ImageView>
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ticket_icon_icons_com_73367" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:text="3"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/_3"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <ImageView
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Fav"
+                        android:id="@+id/fav3"
                         android:layout_width="30dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/bookmark"></ImageView>
+                        android:layout_marginStart="20dp"
+                        tools:layout="@layout/fav" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="top"
-                        android:text="Thiện Ác Đối Đầu"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/thi_n_c_i_u"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="bottom"
-                        android:text="$7,2M"
+                        android:text="@string/_7_2m"
                         android:textColor="@color/dark_grey"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
-                        android:src="@drawable/ticket_icon_icons_com_73367"></ImageView>
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ticket_icon_icons_com_73367" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:text="4"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/_4"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <ImageView
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Fav"
+                        android:id="@+id/fav4"
                         android:layout_width="30dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/bookmark"></ImageView>
+                        android:layout_marginStart="20dp"
+                        tools:layout="@layout/fav" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="top"
-                        android:text="My Big Fat Greek Wedding 3"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold"></TextView>
+                        android:text="@string/my_big_fat_greek_wedding_3"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:gravity="bottom"
-                        android:text="$4,7M"
+                        android:text="@string/_4_7m"
                         android:textColor="@color/dark_grey"
-                        android:textSize="15dp"
-                        android:textStyle="bold"></TextView>
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
-                        android:src="@drawable/ticket_icon_icons_com_73367"></ImageView>
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ticket_icon_icons_com_73367" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

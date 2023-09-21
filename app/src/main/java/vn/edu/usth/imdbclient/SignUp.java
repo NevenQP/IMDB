@@ -3,28 +3,24 @@ package vn.edu.usth.imdbclient;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class You extends Fragment {
-    public You() {
+public class SignUp extends Fragment {
+    public SignUp() {
         // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_you, container, false);
+        View view = inflater.inflate(R.layout.sign_up, container, false);
 
-        Button button = (Button) view.findViewById(R.id.sign_in_button);
+        Button button = (Button) view.findViewById(R.id.sign_in);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,4 +38,5 @@ public class You extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+
 }
