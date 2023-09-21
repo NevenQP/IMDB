@@ -8,27 +8,6 @@
         android:layout_marginLeft="14dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="776dp"
-        android:background="@drawable/rectangle_1"
+        android:background="@drawable/rectangle1"
         />
-
-    <!-- drawable/rectangle_1.xml -->
-    <vector
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:aapt="http://schemas.android.com/aapt"
-        android:width="4dp"
-        android:height="21dp"
-        android:viewportWidth="4"
-        android:viewportHeight="21"
-        >
-        <group>
-            <clip-path
-                android:pathData="M2 0C3.10457 0 4 0.895431 4 2V19C4 20.1046 3.10457 21 2 21C0.895431 21 0 20.1046 0 19V2C0 0.895431 0.895431 0 2 0Z"
-                />
-            <path
-                android:pathData="M0 0V21H4V0"
-                android:fillColor="#EDC647"
-                />
-        </group>
-    </vector>
-
 </Vector>

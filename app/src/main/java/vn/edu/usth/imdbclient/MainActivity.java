@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.search) {
             selectedFragment = new Blue();
         } else if (itemId == R.id.you){
-            selectedFragment = new Blue();
+            selectedFragment = new You();
         }
         // It will help to replace the
         // one fragment to other.
