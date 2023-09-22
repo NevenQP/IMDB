@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:src="@drawable/poster1"
-        android:background="@color/second_primary"
+        android:background="@color/dark_grey"
         android:onClick="OpenMovie"
         android:scaleType="centerInside">
     </ImageButton>

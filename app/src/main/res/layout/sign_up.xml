@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/black">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,9 +14,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="650dp"
         android:layout_marginTop="40dp"
-        android:background="@color/bright_white"
         android:orientation="vertical">
 
         <TextView
@@ -25,6 +24,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:text="Create account"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"></TextView>
 
@@ -35,6 +35,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:hint="First and last name"
+            android:textColorHint="@color/white"
             android:textSize="15dp"></EditText>
 
         <EditText
@@ -44,6 +45,7 @@
             android:layout_marginRight="10dp"
             android:hint="Your email address"
             android:inputType="textEmailAddress"
+            android:textColorHint="@color/white"
             android:textSize="15dp"></EditText>
 
         <EditText
@@ -53,6 +55,7 @@
             android:layout_marginRight="10dp"
             android:hint="Create a password"
             android:inputType="textPassword"
+            android:textColorHint="@color/white"
             android:textSize="15dp"></EditText>
 
         <TextView
@@ -60,15 +63,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:drawableStart="@drawable/alert"
-            android:text="  Passwords must be at least 8 characters"></TextView>
+            android:text="  Passwords must be at least 8 characters"
+            android:textColor="@color/dark_grey"></TextView>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Show password"></CheckBox>
+            android:text="Show password"
+            android:textColor="@color/light_grey"></CheckBox>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -76,48 +81,47 @@
             android:gravity="center"
             android:text="Create your IMDb account"
             android:textAllCaps="false"
-            app:cornerRadius="10dp"></Button>
+            app:cornerRadius="10dp"></androidx.appcompat.widget.AppCompatButton>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account?"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"></TextView>
+            android:layout_marginTop="10dp"
+            android:text="Already have an account?"
+            android:textColor="@color/light_grey"></TextView>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sign_in"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/sign_up_box"
             android:gravity="center"
             android:text="Sign-in now"
-            android:textAllCaps="false"></Button>
+            android:textAllCaps="false"></androidx.appcompat.widget.AppCompatButton>
 
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Condition of Use"
-        android:textColor="@color/blue"
-        android:fontFamily="sans-serif"
+        android:layout_marginLeft="90dp"
         android:layout_marginTop="500dp"
-        android:layout_marginLeft="90dp">
-    </TextView>
+        android:fontFamily="sans-serif"
+        android:text="Condition of Use"
+        android:textColor="@color/blue"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Privacy Notice"
-        android:textColor="@color/blue"
-        android:fontFamily="sans-serif"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="500dp"
         android:layout_marginRight="90dp"
-        android:layout_alignParentRight="true">
-    </TextView>
+        android:fontFamily="sans-serif"
+        android:text="Privacy Notice"
+        android:textColor="@color/blue"></TextView>
 
     <TextView
         android:layout_width="wrap_content"
