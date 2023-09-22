@@ -3,4 +3,15 @@
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/white</item>
     </style>
+
+    <style name="AppSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Customize the search text color -->
+        <item name="android:editTextColor">@color/twitter_search_text_color</item>
+        <!-- Customize the hint text color -->
+        <item name="android:textColorHint">@color/twitter_search_hint_color</item>
+        <!-- Customize the close button color -->
+        <item name="colorControlNormal">@color/twitter_search_close_icon_color</item>
+        <!-- Customize the search icon color -->
+        <item name="colorControlActivated">@color/twitter_search_icon_color</item>
+    </style>
 </resources>
