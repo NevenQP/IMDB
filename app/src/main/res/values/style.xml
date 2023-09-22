@@ -5,13 +5,9 @@
     </style>
 
     <style name="AppSearchViewStyle" parent="Widget.AppCompat.SearchView">
-        <!-- Customize the search text color -->
-        <item name="android:editTextColor">@color/twitter_search_text_color</item>
-        <!-- Customize the hint text color -->
-        <item name="android:textColorHint">@color/twitter_search_hint_color</item>
-        <!-- Customize the close button color -->
-        <item name="colorControlNormal">@color/twitter_search_close_icon_color</item>
-        <!-- Customize the search icon color -->
-        <item name="colorControlActivated">@color/twitter_search_icon_color</item>
+        <item name="android:editTextColor">@color/my_primary</item>
+        <item name="android:textColorHint">@color/second_primary</item>
+        <item name="colorControlNormal">@color/second_primary</item>
+        <item name="colorControlActivated">@color/second_primary</item>
     </style>
 </resources>

@@ -190,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
-                margin>
+                android:layout_marginEnd="3dp">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button4"
