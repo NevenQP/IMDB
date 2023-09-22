@@ -42,17 +42,38 @@
 
                     <fragment
                         android:name="vn.edu.usth.imdbclient.Vid_1"
-                        android:id="@+id/listVideo8"
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
+                        android:layout_width="102dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/listVideo1"
                         android:layout_marginEnd="10dp"
                         tools:layout="@layout/fragment_vid_1" />
 
                     <fragment
                         android:name="vn.edu.usth.imdbclient.Vid_1"
-                        android:id="@+id/listVideo7"
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
+                        android:layout_width="102dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/listVideo2"
+                        android:layout_marginEnd="10dp"
+                        tools:layout="@layout/fragment_vid_1" />
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Vid_1"
+                        android:layout_width="102dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/listVideo3"
+                        android:layout_marginEnd="10dp"
+                        tools:layout="@layout/fragment_vid_1" />
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Vid_1"
+                        android:layout_width="102dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/listVideo4"
+                        android:layout_marginEnd="10dp"
+                        tools:layout="@layout/fragment_vid_1" />
+                    <fragment
+                        android:name="vn.edu.usth.imdbclient.Vid_1"
+                        android:layout_width="102dp"
+                        android:layout_height="150dp"
+                        android:id="@+id/listVideo5"
                         android:layout_marginEnd="10dp"
                         tools:layout="@layout/fragment_vid_1" />
                 </LinearLayout>
@@ -73,6 +94,98 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/my_primary"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-5dp"
+                    android:src="@drawable/vertical_minus_icon_211413" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/fan_favorites"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:text="@string/see_all"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="0dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp">
+
+                        <fragment
+                            android:name="vn.edu.usth.imdbclient.Vid_1"
+                            android:layout_width="88dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/listVideo6"
+                            android:layout_marginEnd="10dp"
+                            tools:layout="@layout/fragment_vid_1" />
+
+
+                        <fragment
+                            android:name="vn.edu.usth.imdbclient.Vid_1"
+                            android:layout_width="88dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/listVideo7"
+                            android:layout_marginEnd="10dp"
+                            tools:layout="@layout/fragment_vid_1" />
+
+                        <fragment
+                            android:name="vn.edu.usth.imdbclient.Vid_1"
+                            android:layout_width="88dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/listVideo8"
+                            android:layout_marginEnd="10dp"
+                            tools:layout="@layout/fragment_vid_1" />
+
+                        <fragment
+                            android:name="vn.edu.usth.imdbclient.Vid_1"
+                            android:layout_width="88dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/listVideo9"
+                            android:layout_marginEnd="10dp"
+                            tools:layout="@layout/fragment_vid_1" />
+
+                        <fragment
+                            android:name="vn.edu.usth.imdbclient.Vid_1"
+                            android:layout_width="88dp"
+                            android:layout_height="130dp"
+                            android:id="@+id/listVideo10"
+                            android:layout_marginEnd="10dp"
+                            tools:layout="@layout/fragment_vid_1" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/my_primary"
+                android:padding="10dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -116,87 +229,29 @@
                         android:layout_marginStart="10dp">
 
                         <fragment
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:id="@+id/listVideo5"
+                            android:name="vn.edu.usth.imdbclient.Trailer1"
+                            android:id="@+id/Trailer1"
                             android:layout_width="200dp"
-                            android:layout_height="100dp"
+                            android:layout_height="113dp"
                             android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
+                            tools:layout="@layout/fragment_trailer1" />
 
 
                         <fragment
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:id="@+id/listVideo6"
+                            android:name="vn.edu.usth.imdbclient.Trailer1"
+                            android:id="@+id/Trailer2"
                             android:layout_width="200dp"
-                            android:layout_height="100dp"
+                            android:layout_height="113dp"
                             android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
-                    </LinearLayout>
-                </HorizontalScrollView>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/my_primary"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="-5dp"
-                    android:src="@drawable/vertical_minus_icon_211413" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/recent_trailers"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="5dp"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:text="@string/see_all"
-                    android:textColor="@color/blue"
-                    android:textSize="12sp" />
-
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="0dp"
-                    android:scrollbars="none">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp">
+                            tools:layout="@layout/fragment_trailer1" />
 
                         <fragment
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:id="@+id/listVideo1"
+                            android:name="vn.edu.usth.imdbclient.Trailer1"
+                            android:id="@+id/Trailer3"
                             android:layout_width="200dp"
-                            android:layout_height="100dp"
+                            android:layout_height="113dp"
                             android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
-
-
-                        <fragment
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:id="@+id/listVideo2"
-                            android:layout_width="200dp"
-                            android:layout_height="100dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
+                            tools:layout="@layout/fragment_trailer1" />
                     </LinearLayout>
                 </HorizontalScrollView>
             </RelativeLayout>
