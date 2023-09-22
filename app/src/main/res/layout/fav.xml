@@ -3,7 +3,7 @@
     android:id="@+id/fav"
     android:layout_width="30dp"
     android:layout_height="50dp"
-    android:background="@color/my_primary"
+    android:background="@color/second_primary"
     android:src="@drawable/bookmark">
 
 </ImageButton>
