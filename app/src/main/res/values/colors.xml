@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#FFFFFF</color>
+    <color name="bright_white">#FFFFFF</color>
+    <color name="white">#FAFAFA</color>
+    <color name="white_grey">#F0F0F0</color>
     <color name="grey_text">#B8B8B8</color>
     <color name="light_grey">#808080</color>
     <color name="button_border">#414141</color>
     <color name="grey">#242424</color>
-    <color name="dark_grey">#121212</color>
-    <color name="black">#000000</color>
+    <color name="second_primary">#121212</color>
+    <color name="my_primary">#000000</color>
     <color name="yellow">#F5C51B</color>
     <color name="blue">#5799EF</color>
     <color name="green">#29C939</color>
+    <color name="dark_grey">#121212</color>
+    <color name="black">#000000</color>
 
 </resources>
