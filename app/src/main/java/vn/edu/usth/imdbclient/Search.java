@@ -3,15 +3,12 @@ package vn.edu.usth.imdbclient;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +35,7 @@ public class Search extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         // Inflate the layout for this fragment
-        btn = btn.findViewById(R.id.search_button_1);
+        btn = view.findViewById(R.id.search_button_1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +73,8 @@ public class Search extends Fragment {
 
             @Override
             public void onFailure(Call<MovieSearchResponse> call, Throwable t) {
-
+                // Handle failure gracefully
+                Log.e("Tag", "Error getting movie data: " + t.getMessage());
             }
         });
     }
