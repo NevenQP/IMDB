@@ -31,8 +31,7 @@ public class Search extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         // Inflate the layout for this fragment
         btn = view.findViewById(R.id.search_button_1);
@@ -48,11 +47,7 @@ public class Search extends Fragment {
 
     private void GetRetrofitResponse() {
         MovieApi movieApi = Servicey.getMovieApi();
-        Call<MovieSearchResponse> responseCall = movieApi
-                .searchMovie(
-                        Credentials.API_KEY,
-                        "Loki",
-                        "1");
+        Call<MovieSearchResponse> responseCall = movieApi.searchMovie(Credentials.API_KEY, "Loki", "1");
         responseCall.enqueue(new Callback<MovieSearchResponse>() {
             @Override
             public void onResponse(Call<MovieSearchResponse> call, Response<MovieSearchResponse> response) {
@@ -60,13 +55,13 @@ public class Search extends Fragment {
                     Log.v("Tag", "the response" + response.body().toString());
                     List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
                     for (MovieModel movie : movies) {
-                        Log.v("Tag", "The Release Date" + movie.getRelease_date());
+                        Log.v("Tag", "The Release Date" + movie.getTitle());
                     }
                 } else {
                     try {
                         Log.v("Tag", "Error" + response.errorBody().string());
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        e.printStackTrace();
                     }
                 }
             }
