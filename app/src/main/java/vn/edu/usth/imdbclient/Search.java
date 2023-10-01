@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.widget.SearchView;
 
-
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,7 +37,16 @@ public class Search extends Fragment implements OnMovieListener {
         ConfigureRecyclerView();
         SetupSearchView();
 
+        return view;
+    }
 
+    private void ConfigureRecyclerView() {
+        movieRecyclerAdapter = new MovieRecyclerView(this);
+        recyclerView.setAdapter(movieRecyclerAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    private void SetupSearchView() {
         // Handle search query submit
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -56,23 +64,6 @@ public class Search extends Fragment implements OnMovieListener {
                 return false;
             }
         });
-
-        return view;
-    }
-
-    private void searchMovie(String query, int pageNumber){
-        movieListViewModel.searchMovieApi(query, pageNumber);
-    }
-
-    private void ConfigureRecyclerView() {
-        movieRecyclerAdapter = new MovieRecyclerView(this);
-        recyclerView.setAdapter(movieRecyclerAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
-
-    private void SetupSearchView() {
-        searchView.setIconifiedByDefault(false);
-        searchView.setQueryHint("Search movies...");
     }
 
     @Override
