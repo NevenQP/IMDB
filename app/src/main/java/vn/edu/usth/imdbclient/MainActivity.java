@@ -2,24 +2,53 @@ package vn.edu.usth.imdbclient;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.adapters.MovieRecyclerView;
+import vn.edu.usth.imdbclient.adapters.OnMovieListener;
+import vn.edu.usth.imdbclient.viewmodel.MovieListViewModel;
+
+
+public class MainActivity extends AppCompatActivity implements OnMovieListener {
+    private RecyclerView recyclerView;
+    private MovieRecyclerView movieRecyclerAdapter;
+    private MovieListViewModel movieListViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize the RecyclerView and MovieRecyclerView adapter
+        recyclerView = findViewById(R.id.recyclerView);
+        movieRecyclerAdapter = new MovieRecyclerView(this);
+
+        // Set the adapter on the RecyclerView
+        recyclerView.setAdapter(movieRecyclerAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnItemSelectedListener(navListener);
@@ -27,8 +56,12 @@ public class MainActivity extends AppCompatActivity {
         // as soon as the application opens the first
         // fragment should be shown to the user
         // in this case it is algorithm fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
+        loadFragment(new Home());
+
+
+
     }
+
 
     private final BottomNavigationView.OnItemSelectedListener navListener = item -> {
         // By using switch we can easily get
@@ -61,5 +94,18 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_container, fragment) // Replace "fragment_container" with the ID of the container where the fragment will be displayed
                 .addToBackStack(null) // Optional: Adds the transaction to the back stack
                 .commit();
+    }
+    private void loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.replace(R.id.fragment_container, fragment);
+            transaction.commit();
+        }
+    }
+
+    @Override
+    public void onMovieClick(int position) {
+
     }
 }

@@ -1,30 +1,27 @@
 package vn.edu.usth.imdbclient;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import androidx.appcompat.widget.SearchView;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import vn.edu.usth.imdbclient.Models.MovieModel;
-import vn.edu.usth.imdbclient.reponse.MovieSearchResponse;
-import vn.edu.usth.imdbclient.request.Servicey;
-import vn.edu.usth.imdbclient.utils.Credentials;
-import vn.edu.usth.imdbclient.utils.MovieApi;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class Search extends Fragment {
-    Button btn;
+import vn.edu.usth.imdbclient.adapters.MovieRecyclerView;
+import vn.edu.usth.imdbclient.adapters.OnMovieListener;
+import vn.edu.usth.imdbclient.viewmodel.MovieListViewModel;
+
+public class Search extends Fragment implements OnMovieListener {
+
+    private RecyclerView recyclerView;
+    private MovieRecyclerView movieRecyclerAdapter;
+    private MovieListViewModel movieListViewModel;
+    private SearchView searchView;
 
     public Search() {
         // Required empty public constructor
@@ -33,44 +30,53 @@ public class Search extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        // Inflate the layout for this fragment
-        btn = view.findViewById(R.id.search_button_1);
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        recyclerView = view.findViewById(R.id.searchRecyclerView);
+        searchView = view.findViewById(R.id.search_view);
+
+        movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
+        ConfigureRecyclerView();
+        SetupSearchView();
+
+
+        // Handle search query submit
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View view) {
-                GetRetrofitResponse();
+            public boolean onQueryTextSubmit(String query) {
+                movieListViewModel.searchMovieApi(
+                        query,
+                        1
+                );
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Handle text changes if needed
+                return false;
             }
         });
 
         return view;
     }
 
-    private void GetRetrofitResponse() {
-        MovieApi movieApi = Servicey.getMovieApi();
-        Call<MovieSearchResponse> responseCall = movieApi.searchMovie(Credentials.API_KEY, "Loki", "1");
-        responseCall.enqueue(new Callback<MovieSearchResponse>() {
-            @Override
-            public void onResponse(Call<MovieSearchResponse> call, Response<MovieSearchResponse> response) {
-                if (response.code() == 200) {
-                    Log.v("Tag", "the response" + response.body().toString());
-                    List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
-                    for (MovieModel movie : movies) {
-                        Log.v("Tag", "The Release Date" + movie.getTitle());
-                    }
-                } else {
-                    try {
-                        Log.v("Tag", "Error" + response.errorBody().string());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+    private void searchMovie(String query, int pageNumber){
+        movieListViewModel.searchMovieApi(query, pageNumber);
+    }
 
-            @Override
-            public void onFailure(Call<MovieSearchResponse> call, Throwable t) {
-                // Handle failure gracefully
-                Log.e("Tag", "Error getting movie data: " + t.getMessage());
-            }
-        });
+    private void ConfigureRecyclerView() {
+        movieRecyclerAdapter = new MovieRecyclerView(this);
+        recyclerView.setAdapter(movieRecyclerAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    private void SetupSearchView() {
+        searchView.setIconifiedByDefault(false);
+        searchView.setQueryHint("Search movies...");
+    }
+
+    @Override
+    public void onMovieClick(int position) {
+        // Handle item click if needed
     }
 }
