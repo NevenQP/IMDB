@@ -1,18 +1,26 @@
 package vn.edu.usth.imdbclient;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import vn.edu.usth.imdbclient.adapters.MovieRecyclerView;
 import vn.edu.usth.imdbclient.adapters.OnMovieListener;
+import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.viewmodel.MovieListViewModel;
 
 public class Search extends Fragment implements OnMovieListener {
@@ -27,13 +35,37 @@ public class Search extends Fragment implements OnMovieListener {
     }
 
     @Override
+    public void onCreate(Bundle saveInstanceState) {
+
+        super.onCreate(saveInstanceState);
+
+        movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
+
+        movieListViewModel.getMovies().observe(this, new Observer<List<MovieModel>>() {
+            @Override
+            public void onChanged(List<MovieModel> movieModels) {
+                // Observing any data change
+                if (movieModels != null) {
+                    for (MovieModel movieModel: movieModels) {
+                        Log.d("Tagy", "onChanged: "+movieModel.getTitle());
+
+                        movieRecyclerAdapter.setmMovies(movieModels);
+                    }
+                }
+
+
+            }
+        });
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         recyclerView = view.findViewById(R.id.searchRecyclerView);
         searchView = view.findViewById(R.id.search_view);
 
-        movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
         ConfigureRecyclerView();
         SetupSearchView();
 
@@ -44,6 +76,29 @@ public class Search extends Fragment implements OnMovieListener {
         movieRecyclerAdapter = new MovieRecyclerView(this);
         recyclerView.setAdapter(movieRecyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+
+
+
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                if (!recyclerView.canScrollHorizontally(1)){
+                    movieListViewModel.searchNextpage();
+
+                }
+
+            }
+        });
+
+
+
+
+
+
     }
 
     private void SetupSearchView() {
@@ -51,10 +106,7 @@ public class Search extends Fragment implements OnMovieListener {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                movieListViewModel.searchMovieApi(
-                        query,
-                        1
-                );
+                movieListViewModel.searchMovieApi(query,1);
                 return true;
             }
 

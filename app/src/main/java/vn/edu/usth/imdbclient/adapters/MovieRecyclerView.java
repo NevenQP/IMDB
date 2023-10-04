@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.R;
 
 public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

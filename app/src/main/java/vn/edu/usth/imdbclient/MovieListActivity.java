@@ -2,7 +2,6 @@ package vn.edu.usth.imdbclient;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.adapters.MovieRecyclerView;
 import vn.edu.usth.imdbclient.adapters.OnMovieListener;
 import vn.edu.usth.imdbclient.viewmodel.MovieListViewModel;

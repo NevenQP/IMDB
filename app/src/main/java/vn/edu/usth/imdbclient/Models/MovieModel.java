@@ -1,4 +1,4 @@
-package vn.edu.usth.imdbclient.Models;
+package vn.edu.usth.imdbclient.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

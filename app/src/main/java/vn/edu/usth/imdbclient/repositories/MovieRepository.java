@@ -1,11 +1,10 @@
 package vn.edu.usth.imdbclient.repositories;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.request.MovieApiClient;
 
 public class MovieRepository {
@@ -13,6 +12,8 @@ public class MovieRepository {
     private static MovieRepository instance;
 
     private MovieApiClient movieApiClient;
+    private String nQuery;
+    private int mPageNumber;
 
     public static MovieRepository getInstance() {
 
@@ -32,7 +33,13 @@ public class MovieRepository {
     public LiveData<List<MovieModel>> getMovies(){return movieApiClient.getMovies();}
 
     public void searchMovieApi(String query, int pageNumber) {
+        nQuery = query;
+        mPageNumber = pageNumber;
         movieApiClient.searchMovieApi(query, pageNumber);
+    }
+
+    public void searchNextPage(){
+        searchMovieApi(nQuery, mPageNumber+1);
     }
 
 }

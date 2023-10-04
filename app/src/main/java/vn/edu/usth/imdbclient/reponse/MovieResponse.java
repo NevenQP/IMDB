@@ -3,7 +3,7 @@ package vn.edu.usth.imdbclient.reponse;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.models.MovieModel;
 
 public class MovieResponse {
     // Finding Movie Object

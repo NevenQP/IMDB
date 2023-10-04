@@ -1,12 +1,11 @@
 package vn.edu.usth.imdbclient.viewmodel;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.repositories.MovieRepository;
 
 public class MovieListViewModel extends ViewModel {
@@ -24,4 +23,7 @@ public class MovieListViewModel extends ViewModel {
         movieRepository.searchMovieApi(query, pageNumber);
     }
 
+    public void searchNextpage(){
+        movieRepository.searchNextPage();
+    }
 }

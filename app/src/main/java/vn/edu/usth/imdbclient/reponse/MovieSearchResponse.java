@@ -5,9 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.models.MovieModel;
 
 public class MovieSearchResponse {
     @SerializedName("total_results")
