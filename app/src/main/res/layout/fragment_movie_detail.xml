@@ -12,6 +12,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to close the activity"
+            android:id="@+id/button"
+            android:layout_centerVertical="true"
+            android:layout_margin="23dp"/>
         <TextView
             android:id="@+id/detailTitle"
             android:layout_width="wrap_content"

@@ -3,11 +3,16 @@ package vn.edu.usth.imdbclient;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.util.Log;
 
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +33,13 @@ public class Movie extends AppCompatActivity {
         // Inflate the layout for the activity
         setContentView(R.layout.fragment_movie_detail);
 
-
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              finish();
+          }
+        });
         // Get the views from the layout
         detailImage = findViewById(R.id.detailImage);
         detailDuration = findViewById(R.id.detailLanguage);
@@ -51,7 +62,7 @@ public class Movie extends AppCompatActivity {
             detailOverview.setText(movieModel.getMovie_overview());
 
             Glide.with(this)
-                    .load("https://image.tmdb.org/t/p/w500/" +movieModel.getPoster_path())
+                    .load("https://image.tmdb.org/t/p/w500/" + movieModel.getPoster_path())
                     .into(detailImage);
         }
     }
