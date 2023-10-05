@@ -2,12 +2,14 @@ package vn.edu.usth.imdbclient;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -44,9 +46,6 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
         // fragment should be shown to the user
         // in this case it is algorithm fragment
         loadFragment(new Home());
-
-
-
     }
 
 
@@ -71,17 +70,6 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
         return true;
     };
 
-    public void OpenMovie(View view){
-        ImageButton button = (ImageButton) view;
-        Fragment fragment = new Movie(); // Replace with your fragment class
-
-        // Use a FragmentManager to replace the current fragment with the new one
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, fragment) // Replace "fragment_container" with the ID of the container where the fragment will be displayed
-                .addToBackStack(null) // Optional: Adds the transaction to the back stack
-                .commit();
-    }
     private void loadFragment(Fragment fragment) {
         if (fragment != null) {
             FragmentManager fragmentManager = getSupportFragmentManager();

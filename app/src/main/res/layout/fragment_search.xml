@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/my_primary"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:id="@+id/search_fragment_container">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"
         android:layout_width="match_parent"
@@ -25,4 +26,6 @@
         app:searchViewStyle="@style/AppSearchViewStyle" />
 
 </FrameLayout>
+
+
 

@@ -1,23 +1,58 @@
 package vn.edu.usth.imdbclient;
 
+
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-public class Movie extends Fragment {
-    public Movie() {
-        // Required empty public constructor
-    }
+
+import android.util.Log;
+
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
+import com.bumptech.glide.Glide;
+
+import vn.edu.usth.imdbclient.models.MovieModel;
+
+public class Movie extends AppCompatActivity {
+
+    private ImageView detailImage;
+    private TextView detailTitle, detailDuration, detailRate, detailYear, detailOverview;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Inflate the layout for the activity
+        setContentView(R.layout.fragment_movie_detail);
+
+
+        // Get the views from the layout
+        detailImage = findViewById(R.id.detailImage);
+        detailDuration = findViewById(R.id.detailLanguage);
+        detailTitle = findViewById(R.id.detailTitle);
+        detailRate = findViewById(R.id.detailRate);
+        detailYear = findViewById(R.id.detailYear);
+        detailOverview = findViewById(R.id.detailOverview);
+
+        GetDataFromIntent();
     }
 
+    private void GetDataFromIntent() {
+        if (getIntent().hasExtra("movie")) {
+            MovieModel movieModel = getIntent().getParcelableExtra("movie");
+
+            detailTitle.setText(movieModel.getTitle());
+            detailDuration.setText(movieModel.getOriginal_language());
+            detailRate.setText(movieModel.getVote_average());
+            detailYear.setText(movieModel.getRelease_date());
+            detailOverview.setText(movieModel.getMovie_overview());
+
+            Glide.with(this)
+                    .load("https://image.tmdb.org/t/p/w500/" +movieModel.getPoster_path())
+                    .into(detailImage);
+        }
+    }
 }

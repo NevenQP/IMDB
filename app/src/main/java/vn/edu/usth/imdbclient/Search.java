@@ -1,15 +1,19 @@
 package vn.edu.usth.imdbclient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -29,6 +33,7 @@ public class Search extends Fragment implements OnMovieListener {
     private MovieRecyclerView movieRecyclerAdapter;
     private MovieListViewModel movieListViewModel;
     private SearchView searchView;
+    private FrameLayout search_fragment_container;
 
     public Search() {
         // Required empty public constructor
@@ -39,7 +44,10 @@ public class Search extends Fragment implements OnMovieListener {
 
         super.onCreate(saveInstanceState);
 
+        search_fragment_container = (FrameLayout) getActivity().findViewById(R.id.search_fragment_container);
+
         movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
+
 
         movieListViewModel.getMovies().observe(this, new Observer<List<MovieModel>>() {
             @Override
@@ -69,6 +77,7 @@ public class Search extends Fragment implements OnMovieListener {
         ConfigureRecyclerView();
         SetupSearchView();
 
+
         return view;
     }
 
@@ -93,12 +102,6 @@ public class Search extends Fragment implements OnMovieListener {
 
             }
         });
-
-
-
-
-
-
     }
 
     private void SetupSearchView() {
@@ -118,8 +121,13 @@ public class Search extends Fragment implements OnMovieListener {
         });
     }
 
+
     @Override
     public void onMovieClick(int position) {
-        // Handle item click if needed
+
+        Intent intent = new Intent(this.getActivity(), Movie.class);
+        intent.putExtra("movie", movieRecyclerAdapter.getSelectedMovie(position));
+        startActivity(intent);
+
     }
 }

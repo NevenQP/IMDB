@@ -2,7 +2,9 @@ package vn.edu.usth.imdbclient.utils;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
+import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.reponse.MovieSearchResponse;
 
 public interface MovieApi {
@@ -13,6 +15,12 @@ public interface MovieApi {
             @Query("api_key") String key,
             @Query("query") String query,
             @Query("page") String page
+    );
+
+    @GET("/3/search/{movie_id}")
+    Call <MovieModel> getMovie(
+            @Path("movie_id") int movie_id,
+            @Query("api_key") String api_key
     );
 
 }

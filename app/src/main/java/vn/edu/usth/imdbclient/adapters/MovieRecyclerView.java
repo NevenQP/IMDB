@@ -37,6 +37,7 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
         ((MovieViewHolder)holder).title.setText(mMovies.get(i).getTitle());
         ((MovieViewHolder)holder).year.setText(mMovies.get(i).getRelease_date());
         ((MovieViewHolder)holder).rating.setText(String.valueOf(mMovies.get(i).getVote_average()));
+        ((MovieViewHolder)holder).duration.setText(mMovies.get(i).getOriginal_language());
 
         Glide.with(holder.itemView.getContext())
                 .load("https://image.tmdb.org/t/p/w500/"+mMovies.get(i).getPoster_path())
@@ -58,5 +59,12 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
     public void setmMovies(List<MovieModel> mMovies) {
         this.mMovies = mMovies;
         notifyDataSetChanged();
+    }
+
+    public MovieModel getSelectedMovie(int position) {
+        if (mMovies != null && mMovies.size() > 0) {
+            return mMovies.get(position);
+        }
+        return null;
     }
 }
