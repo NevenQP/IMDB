@@ -17,30 +17,8 @@ public class Featured extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
-                             Bundle savedInstanceState)
-    {
+                             Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_featured, container, false);
-        return v;
-    }
-
-    public static Featured newInstance(String param1,
-                                            String param2)
-    {
-        Featured fragment = new Featured();
-        Bundle args = new Bundle();
-        args.putString("param1", param1);
-        args.putString("param2", param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onViewCreated(View view,
-                              Bundle savedInstanceState)
-    {
-        super.onViewCreated(view, savedInstanceState);
-
-        // getting the employeelist
         ArrayList<Feat> employelist
                 = Constant.getEmployeeData();
 
@@ -50,12 +28,23 @@ public class Featured extends Fragment {
         // Set the LayoutManager that
         // this RecyclerView will use.
         RecyclerView recyclerView
-                = view.findViewById(R.id.recycleView);
-        recyclerView.setLayoutManager(
-                new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+                = v.findViewById(R.id.recycleView);
 
         // adapter instance is set to the
         // recyclerview to inflate the items.
         recyclerView.setAdapter(itemAdapter);
+        recyclerView.setLayoutManager(
+                new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
+        return v;
+    }
+
+    public static Featured newInstance(String param1,
+                                       String param2) {
+        Featured fragment = new Featured();
+        Bundle args = new Bundle();
+        args.putString("param1", param1);
+        args.putString("param2", param2);
+        fragment.setArguments(args);
+        return fragment;
     }
 }
