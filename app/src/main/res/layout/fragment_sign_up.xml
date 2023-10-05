@@ -48,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
+        android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -62,6 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
+        android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,11 +82,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:drawableStart="@drawable/alert"
-            android:text="  Passwords must be at least 8 characters"
-            android:textColor="@color/light_grey"></TextView>
+            android:text="Passwords must be at least 8 characters"
+            android:textColor="@color/light_grey">
+
+        </TextView>
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/show_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -95,6 +99,7 @@
         android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sign_up"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -102,7 +107,9 @@
             android:gravity="center"
             android:text="Create your IMDb account"
             android:textAllCaps="false"
-            app:cornerRadius="10dp"></androidx.appcompat.widget.AppCompatButton>
+            app:cornerRadius="10dp">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     <TextView
         android:layout_width="match_parent"
@@ -120,7 +127,9 @@
             android:background="@drawable/sign_up_box"
             android:gravity="center"
             android:text="Sign-in now"
-            android:textAllCaps="false"></androidx.appcompat.widget.AppCompatButton>
+            android:textAllCaps="false">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
 
     <TextView
@@ -130,7 +139,9 @@
         android:layout_marginTop="500dp"
         android:fontFamily="sans-serif"
         android:text="Condition of Use"
-        android:textColor="@color/blue"></TextView>
+        android:textColor="@color/blue">
+
+    </TextView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -140,7 +151,9 @@
         android:layout_marginRight="90dp"
         android:fontFamily="sans-serif"
         android:text="Privacy Notice"
-        android:textColor="@color/blue"></TextView>
+        android:textColor="@color/blue">
+
+    </TextView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -148,6 +161,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="550dp"
         android:text="1996-2023, Amazon.com, Inc. or its affiliates"
-        android:textSize="10dp"></TextView>
+        android:textSize="10dp">
+
+    </TextView>
 
 </LinearLayout>
