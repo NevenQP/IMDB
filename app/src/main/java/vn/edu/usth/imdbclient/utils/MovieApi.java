@@ -1,9 +1,13 @@
 package vn.edu.usth.imdbclient.utils;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import vn.edu.usth.imdbclient.featured.Feat;
+import vn.edu.usth.imdbclient.featured.FeatResponse;
 import vn.edu.usth.imdbclient.models.MovieModel;
 import vn.edu.usth.imdbclient.reponse.MovieSearchResponse;
 
@@ -23,4 +27,9 @@ public interface MovieApi {
             @Query("api_key") String api_key
     );
 
+    @GET("/3/movie/popular")
+    Call<FeatResponse> searchFeat(
+            @Query("api_key") String api_key,
+            @Query("page") String page
+    );
 }

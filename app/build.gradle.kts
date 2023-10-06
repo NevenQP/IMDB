@@ -54,6 +54,7 @@ dependencies {
     //GlideLibrary
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
+    implementation ("com.squareup.moshi:moshi:1.15.0")
 
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
