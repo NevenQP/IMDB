@@ -1,5 +1,6 @@
 package vn.edu.usth.imdbclient.featured;
 
+import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -7,6 +8,8 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import vn.edu.usth.imdbclient.Movie;
 
 public class Feat implements Parcelable {
     private String title;

@@ -26,7 +26,6 @@ import vn.edu.usth.imdbclient.utils.MovieApi;
 
 public class Featured extends Fragment {
     FeaturedAdapter adapter;
-    private MovieRecyclerView movieRecyclerAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -82,7 +81,7 @@ public class Featured extends Fragment {
     public void onMovieClick(int position) {
 
         Intent intent = new Intent(this.getActivity(), Movie.class);
-        intent.putExtra("movie", movieRecyclerAdapter.getSelectedMovie(position));
+        intent.putExtra("movie", adapter.getSelectedMovie(position));
         startActivity(intent);
 
     }

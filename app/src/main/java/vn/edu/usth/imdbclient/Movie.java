@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.featured.Feat;
 
 public class Movie extends AppCompatActivity {
 
@@ -42,8 +43,11 @@ public class Movie extends AppCompatActivity {
         detailRate = findViewById(R.id.detailRate);
         detailYear = findViewById(R.id.detailYear);
         detailOverview = findViewById(R.id.detailOverview);
-
-        GetDataFromIntent();
+        if (getIntent().hasExtra("movie")){
+            GetDataFromIntent();
+        } else {
+            GetDataFromIntent2();
+        }
     }
 
     private void GetDataFromIntent() {
@@ -58,6 +62,22 @@ public class Movie extends AppCompatActivity {
 
             Glide.with(this)
                     .load("https://image.tmdb.org/t/p/w500/" + movieModel.getPoster_path())
+                    .into(detailImage);
+        }
+    }
+
+    private void GetDataFromIntent2() {
+        if (getIntent().hasExtra("movie2")) {
+            Feat feat = getIntent().getParcelableExtra("movie2");
+
+            detailTitle.setText(feat.getTitle());
+            detailDuration.setText(feat.getOriginal_language());
+            detailRate.setText(feat.getVote_average());
+            detailYear.setText(feat.getRelease_date());
+            detailOverview.setText(feat.getMovie_overview());
+
+            Glide.with(this)
+                    .load("https://image.tmdb.org/t/p/w500/" + feat.getPoster_path())
                     .into(detailImage);
         }
     }

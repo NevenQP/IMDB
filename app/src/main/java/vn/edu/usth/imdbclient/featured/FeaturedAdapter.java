@@ -1,11 +1,13 @@
 package vn.edu.usth.imdbclient.featured;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,11 +16,15 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import vn.edu.usth.imdbclient.Models.MovieModel;
+import vn.edu.usth.imdbclient.Movie;
 import vn.edu.usth.imdbclient.R;
 import vn.edu.usth.imdbclient.adapters.MovieViewHolder;
+import vn.edu.usth.imdbclient.adapters.OnMovieListener;
 
 public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.ViewHolder> {
     private List<Feat> feats;
+    OnMovieListener onMovieListener;
 
     public FeaturedAdapter(List<Feat> feats) {
         this.feats = feats;
@@ -47,6 +53,22 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.ViewHo
         Glide.with(holder.itemView.getContext())
                 .load("https://image.tmdb.org/t/p/w500/"+u.getPoster_path())
                 .into(holder.imageView);
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create an Intent object to open the desired activity.
+                Intent intent = new Intent(view.getContext(), Movie.class);
+                intent.putExtra("movie2", u);
+                view.getContext().startActivity(intent);
+            }
+        });
+    }
+    public Feat getSelectedMovie(int position) {
+        if (feats != null && feats.size() > 0) {
+            return feats.get(position);
+        }
+        return null;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
