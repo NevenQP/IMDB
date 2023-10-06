@@ -47,4 +47,6 @@
     <string name="pg">PG</string>
     <string name="_2h_32m">2h 32m</string>
     <string name="fan_favorites">Fan favorites</string>
+    <string name="new_movie">New Movie</string>
+    <string name="new_tv_show">New Tv Show</string>
 </resources>

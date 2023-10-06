@@ -33,6 +33,16 @@ public interface MovieApi {
             @Query("page") String page
     );
 
+    @GET("/3/trending/movie/day")
+    Call<FeatResponse> searchMovieH(
+            @Query("api_key") String api_key
+    );
+
+    @GET("/3/trending/tv/day")
+    Call<FeatResponse> searchTvH(
+            @Query("api_key") String api_key
+    );
+
 
 
 }

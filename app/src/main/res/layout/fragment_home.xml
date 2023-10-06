@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:fontFamily="sans-serif"
-                    android:text="@string/fan_favorites"
+                    android:text="@string/new_movie"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -117,45 +117,11 @@
                         android:layout_marginEnd="10dp">
 
                         <fragment
-                            android:id="@+id/listVideo6"
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:layout_width="88dp"
-                            android:layout_height="130dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
-
-
-                        <fragment
-                            android:id="@+id/listVideo7"
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:layout_width="88dp"
-                            android:layout_height="130dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
-
-                        <fragment
-                            android:id="@+id/listVideo8"
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:layout_width="88dp"
-                            android:layout_height="130dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
-
-                        <fragment
-                            android:id="@+id/listVideo9"
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:layout_width="88dp"
-                            android:layout_height="130dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
-
-                        <fragment
-                            android:id="@+id/listVideo10"
-                            android:name="vn.edu.usth.imdbclient.Vid_1"
-                            android:layout_width="88dp"
-                            android:layout_height="130dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_vid_1" />
+                            android:id="@+id/rec2"
+                            android:name="vn.edu.usth.imdbclient.featured.MovieH"
+                            android:layout_width="1020dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp" />
                     </LinearLayout>
                 </HorizontalScrollView>
             </RelativeLayout>
@@ -178,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:fontFamily="sans-serif"
-                    android:text="@string/popular_trailers"
+                    android:text="@string/new_tv_show"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -207,29 +173,11 @@
                         android:layout_marginEnd="10dp">
 
                         <fragment
-                            android:id="@+id/Trailer1"
-                            android:name="vn.edu.usth.imdbclient.Trailer1"
-                            android:layout_width="200dp"
-                            android:layout_height="113dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_trailer1" />
-
-
-                        <fragment
-                            android:id="@+id/Trailer2"
-                            android:name="vn.edu.usth.imdbclient.Trailer1"
-                            android:layout_width="200dp"
-                            android:layout_height="113dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_trailer1" />
-
-                        <fragment
-                            android:id="@+id/Trailer3"
-                            android:name="vn.edu.usth.imdbclient.Trailer1"
-                            android:layout_width="200dp"
-                            android:layout_height="113dp"
-                            android:layout_marginEnd="10dp"
-                            tools:layout="@layout/fragment_trailer1" />
+                            android:id="@+id/rec3"
+                            android:name="vn.edu.usth.imdbclient.featured.TvH"
+                            android:layout_width="1020dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp" />
                     </LinearLayout>
                 </HorizontalScrollView>
             </RelativeLayout>
