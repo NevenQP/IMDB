@@ -8,7 +8,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 import vn.edu.usth.imdbclient.featured.Feat;
 import vn.edu.usth.imdbclient.featured.FeatResponse;
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 import vn.edu.usth.imdbclient.reponse.MovieSearchResponse;
 
 public interface MovieApi {
@@ -32,4 +32,7 @@ public interface MovieApi {
             @Query("api_key") String api_key,
             @Query("page") String page
     );
+
+
+
 }

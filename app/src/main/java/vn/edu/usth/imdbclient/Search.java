@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -24,7 +22,7 @@ import java.util.List;
 
 import vn.edu.usth.imdbclient.adapters.MovieRecyclerView;
 import vn.edu.usth.imdbclient.adapters.OnMovieListener;
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 import vn.edu.usth.imdbclient.viewmodel.MovieListViewModel;
 
 public class Search extends Fragment implements OnMovieListener {

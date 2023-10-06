@@ -11,8 +11,9 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
+
 import vn.edu.usth.imdbclient.R;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 
 public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -36,7 +37,7 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         ((MovieViewHolder)holder).title.setText(mMovies.get(i).getTitle());
         ((MovieViewHolder)holder).year.setText(mMovies.get(i).getRelease_date());
-        ((MovieViewHolder)holder).rating.setText(String.valueOf(mMovies.get(i).getVote_average()));
+        ((MovieViewHolder)holder).rating.setText(mMovies.get(i).getVote_average());
         ((MovieViewHolder)holder).duration.setText(mMovies.get(i).getOriginal_language());
 
         Glide.with(holder.itemView.getContext())

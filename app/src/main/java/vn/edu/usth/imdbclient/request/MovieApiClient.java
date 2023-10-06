@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 import retrofit2.Call;
 import retrofit2.Response;
 import vn.edu.usth.imdbclient.AppExecutors;
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 import vn.edu.usth.imdbclient.reponse.MovieSearchResponse;
 import vn.edu.usth.imdbclient.utils.Credentials;
 

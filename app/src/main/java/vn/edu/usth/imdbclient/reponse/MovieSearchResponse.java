@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 
 public class MovieSearchResponse {
     @SerializedName("total_results")

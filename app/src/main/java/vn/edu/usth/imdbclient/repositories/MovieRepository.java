@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 import vn.edu.usth.imdbclient.request.MovieApiClient;
 
 public class MovieRepository {

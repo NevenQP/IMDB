@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
-
 public class FeatResponse {
     @SerializedName("total_results")
     @Expose()

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 import vn.edu.usth.imdbclient.repositories.MovieRepository;
 
 public class MovieListViewModel extends ViewModel {

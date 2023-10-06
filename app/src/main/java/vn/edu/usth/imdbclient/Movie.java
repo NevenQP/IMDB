@@ -3,14 +3,9 @@ package vn.edu.usth.imdbclient;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.util.Log;
-
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 
 public class Movie extends AppCompatActivity {
 

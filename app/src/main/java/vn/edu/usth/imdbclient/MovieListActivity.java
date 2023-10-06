@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import vn.edu.usth.imdbclient.models.MovieModel;
+import vn.edu.usth.imdbclient.Models.MovieModel;
 import vn.edu.usth.imdbclient.adapters.MovieRecyclerView;
 import vn.edu.usth.imdbclient.adapters.OnMovieListener;
 import vn.edu.usth.imdbclient.viewmodel.MovieListViewModel;

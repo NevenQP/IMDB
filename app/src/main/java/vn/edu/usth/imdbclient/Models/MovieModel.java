@@ -1,11 +1,10 @@
-package vn.edu.usth.imdbclient.models;
+package vn.edu.usth.imdbclient.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class MovieModel implements Parcelable {
